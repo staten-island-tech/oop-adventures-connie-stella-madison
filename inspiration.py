@@ -15,7 +15,9 @@ class Character:
         return self.health > 0
 
 # Creating two characters: Hero and Villain
-hero = Character("Brave Hero", 100)  # Hero starts with 100 health
+hero = Character("Madison", 100)
+hero = Character("Stella", 100)
+hero = Character("Connie", 100)
 villain = Character("Evil Villain", 100)  # Villain starts with 100 health
 
 # The fight
