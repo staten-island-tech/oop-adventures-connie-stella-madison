@@ -15,8 +15,15 @@ class Character:
         return self.health > 0
 
 # Creating two characters: Hero and Villain
+<<<<<<< Updated upstream:app.py
 hero = Character("Brave Hero", 100)  # Hero starts with 100 health
 villain = Character("Evil Villain", 100)  # Villain starts with 100 health
+=======
+hero = Character("Madison", 50)
+hero = Character("Stella", 150)
+hero = Character("Connie", 150)
+villain = Character("OG", 2000)  # Villain starts with 100 health
+>>>>>>> Stashed changes:inspiration.py
 
 # The fight
 while hero.is_alive() and villain.is_alive():
