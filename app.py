@@ -1,4 +1,8 @@
 # Character class
+import json 
+with open("Characters.json", encoding="utf8") as test:
+    data = json.load(test)
+
 class Character:
     def __init__(self, name, health):
         self.name = name  # The character's name
@@ -13,17 +17,6 @@ class Character:
     # Method to check if the character is still alive
     def is_alive(self):
         return self.health > 0
-
-# Creating two characters: Hero and Villain
-<<<<<<< Updated upstream:app.py
-hero = Character("Brave Hero", 100)  # Hero starts with 100 health
-villain = Character("Evil Villain", 100)  # Villain starts with 100 health
-=======
-hero = Character("Madison", 50)
-hero = Character("Stella", 150)
-hero = Character("Connie", 150)
-villain = Character("OG", 2000)  # Villain starts with 100 health
->>>>>>> Stashed changes:inspiration.py
 
 # The fight
 while hero.is_alive() and villain.is_alive():
