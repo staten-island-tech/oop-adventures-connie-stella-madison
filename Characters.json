@@ -1,0 +1,37 @@
+{
+    "characters": [
+        {
+            "name": "Stellas",
+            "type": "hero",
+            "creature": "human",
+            "hp": 150,
+            "basic_attack_damage_punch": 20,
+            "speed": "10 m/h",
+            "basic_attack_damage_kick": 25,
+            "ultimate_attack_super_duper_stella": 50,
+            "ultimate_attack_super_duper_stella_2_0": 55
+        },
+        {
+            "name": "Connie",
+            "type": "hero",
+            "creature": "human",
+            "hp": 150,
+            "speed": "15 m/h",
+            "basic_attack_damage_punch": 15,
+            "basic_attack_damage_kick": 30,
+            "ultimate_attack_super_duper_connie": 90,
+            "ultimate_attack_super_duper_connie_2_0": 95
+        },
+        {
+            "name": "OG",
+            "type": "villain",
+            "creature": "goblin", 
+            "hp": 2000,
+            "speed": "1 m/h",
+            "basic_attack_damage_punch": 40,
+            "basic_attack_damage_kick": 50,
+            "ultimate_attack_super_duper_og": 100,
+            "ultimate_attack_super_duper_og_2_0": 110
+        }
+    ]
+}
