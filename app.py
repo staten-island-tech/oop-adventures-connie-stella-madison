@@ -1,4 +1,5 @@
 import json
+import random
 with open("Characters.json", encoding="utf8") as test:
     data = json.load(test)
 
@@ -11,7 +12,7 @@ class Character:
         self.ultimate_attack = ultimate_attack
         self.ultimate_attack_2_0 = ultimate_attack_2_0
 
-    # Method for attacking the opponent
+    # how to cause damage towards the villains
     def attack(self, opponent, attack_type):
         if attack_type == 'punch':
             damage = self.punch_damage
@@ -27,12 +28,12 @@ class Character:
             print(f"{self.name} misses the attack!")
 
         opponent.health -= damage  # bye bye oppnonent health
-    # Method to check if the character is still alive
+    # to be dead or not to be dead
     def is_alive(self):
         return self.health > 0
 
     def choose_attack(self):
-        # Let the user choose an attack
+        # player chooses the attack
         print(f"\n{self.name}'s turn:")
         print("Choose your attack:")
         print("1. Punch")
@@ -53,7 +54,7 @@ class Character:
             print("Invalid choice! You missed your turn!")
             return 'miss'
 
-# Function to choose the player character
+# player chooses character
 def choose_character():
     print("Choose your character:")
     heroes = [character for character in data['characters'] if character['type'] == 'hero']
@@ -73,16 +74,17 @@ def choose_character():
         selected_hero['ultimate_attack_super_duper_stella_2_0'] if 'ultimate_attack_super_duper_stella_2_0' in selected_hero else 0  
      )
 
-# Function to choose the villain 
+# honestly i dont know if i want this part or just make it randomized 
 def choose_villain():
-    villain_data = data['characters'][2] 
+    villains = [character for character in data['characters'] if character['type'] == 'villain']
+    selected_villain = random.choice(villains)
     return Character(
-        villain_data['name'],
-        villain_data['hp'],
-        villain_data['basic_attack_damage_punch'],
-        villain_data['basic_attack_damage_kick'],
-        villain_data.get('ultimate_attack_super_duper_og', 0),
-        villain_data.get('ultimate_attack_super_duper_og_2_0', 0)
+        selected_villain['name'],
+        selected_villain['hp'],
+        selected_villain['basic_attack_damage_punch'],
+        selected_villain['basic_attack_damage_kick'],
+        selected_villain.get('ultimate_attack_super_duper_og', 0),
+        selected_villain.get('ultimate_attack_super_duper_og_2_0', 0)
     )
 
 print("CHOOSE YOUR HERO")
@@ -91,7 +93,7 @@ print("CHOOSE YOUR OPPONENT")
 villain = choose_villain()
 
 
-# The fight loop
+# the fighting 
 while hero.is_alive() and villain.is_alive():
     # Hero's turn
     attack_choice = hero.choose_attack()
