@@ -37,12 +37,34 @@
             "name": "OG",
             "type": "villain",
             "creature": "goblin", 
-            "hp": 2000,
+            "hp": 500,
             "speed": "1 m/h",
             "basic_attack_damage_punch": 40,
             "basic_attack_damage_kick": 50,
-            "ultimate_attack_super_duper_og": 100,
-            "ultimate_attack_super_duper_og_2_0": 110
+            "ultimate_attack_super_duper_og": 70,
+            "ultimate_attack_super_duper_og_2_0": 75
+        }
+        {
+            "name": "DS",
+            "type": "villain",
+            "creature": "Lizard", 
+            "hp": 300,
+            "speed": "5 m/h",
+            "basic_attack_damage_punch": 35,
+            "basic_attack_damage_kick": 30,
+            "ultimate_attack_super_duper_ds,": 35,
+            "ultimate_attack_super_duper_ds_2_0": 45
+        }
+        {
+            "name": "JP",
+            "type": "villain",
+            "creature": "", 
+            "hp": 500,
+            "speed": "1 m/h",
+            "basic_attack_damage_punch": 40,
+            "basic_attack_damage_kick": 35,
+            "ultimate_attack_super_duper_jp": 65,
+            "ultimate_attack_super_duper_jp_2_0": 80
         }
     ]
 }
