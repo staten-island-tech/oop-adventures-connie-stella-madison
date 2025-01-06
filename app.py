@@ -31,28 +31,31 @@ class Character:
     # to be dead or not to be dead
     def is_alive(self):
         return self.health > 0
-
     def choose_attack(self):
-        # player chooses the attack
         print(f"\n{self.name}'s turn:")
         print("Choose your attack:")
         print("1. Punch")
         print("2. Kick")
-        print("3. Ultimate Attack (Super Duper!)")
+        print("3. Ultimate Attack 1.0")
         print("4. Ultimate Attack 2.0")
-        choice = input("Enter 1, 2, 3, or 4: ")
+        while True:
+            choice = input("Enter 1, 2, 3, or 4: ")
+    
+            print(f"Player chose: {choice}")
 
-        if choice == '1':
-            return 'punch'
-        elif choice == '2':
-            return 'kick'
-        elif choice == '3':
-            return 'ultimate'
-        elif choice == '4':
-            return 'ultimate_2_0'
-        else:
-            print("Invalid choice! You missed your turn!")
-            return 'miss'
+            if choice == '1':
+                return 'punch'
+            elif choice == '2':
+                return 'kick'
+            elif choice == '3':
+                return 'ultimate'
+            elif choice == '4':
+                return 'ultimate_2_0'
+            else:
+                print("Invalid choice! You missed your turn!")
+
+
+        
 
 # player chooses character
 def choose_character():
@@ -89,7 +92,7 @@ def choose_villain():
 
 print("CHOOSE YOUR HERO")
 hero = choose_character()
-print("CHOOSE YOUR OPPONENT")
+
 villain = choose_villain()
 
 
