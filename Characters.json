@@ -43,7 +43,7 @@
             "basic_attack_damage_kick": 50,
             "ultimate_attack_super_duper_og": 70,
             "ultimate_attack_super_duper_og_2_0": 75
-        }
+        },
         {
             "name": "DS",
             "type": "villain",
@@ -54,7 +54,7 @@
             "basic_attack_damage_kick": 30,
             "ultimate_attack_super_duper_ds,": 35,
             "ultimate_attack_super_duper_ds_2_0": 45
-        }
+        },
         {
             "name": "JP",
             "type": "villain",
