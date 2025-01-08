@@ -16,18 +16,22 @@ class Character:
     def attack(self, opponent, attack_type):
         if attack_type == 'punch':
             damage = self.punch_damage
-            print(f"{self.name} punches {opponent.name} and deals {damage} damage!")
+            print("{} punches {} and deals {} damage!".format(self.name, opponent.name, damage))
         elif attack_type == 'kick':
             damage = self.kick_damage
-            print(f"{self.name} kicks {opponent.name} and deals {damage} damage!")
+            print("{} kicks {} and deals {} damage!".format(self.name, opponent.name, damage))
         elif attack_type == 'ultimate':
             damage = self.ultimate_attack
-            print(f"{self.name} uses {self.ultimate_attack_2_0} and deals {damage} damage!")
+            print("{} uses Ultimate Attack 1.0 and deals {} damage!".format(self.name, damage))
+        elif attack_type == 'ultimate_2_0':  # Handle Ultimate Attack 2.0 separately
+            damage = self.ultimate_attack_2_0
+            print("{} uses Ultimate Attack 2.0 and deals {} damage!".format(self.name, damage))
         else:
             damage = 0
-            print(f"{self.name} misses the attack!")
+            print("{} misses the attack!".format(self.name))
 
-        opponent.health -= damage  # bye bye oppnonent health
+        opponent.health -= damage  # Decrease opponent health by damage
+
     # to be dead or not to be dead
     def is_alive(self):
         return self.health > 0
