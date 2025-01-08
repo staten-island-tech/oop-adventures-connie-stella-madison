@@ -19,8 +19,8 @@
             "speed": "15 m/h",
             "basic_attack_damage_punch": 15,
             "basic_attack_damage_kick": 30,
-            "ultimate_attack_super_duper_connie": 90,
-            "ultimate_attack_super_duper_connie_2_0": 95
+            "ultimate_attack_super_duper_connie": 100,
+            "ultimate_attack_super_duper_connie_2_0": 195
         },
         {
             "name": "Madison",
