@@ -53,13 +53,21 @@ class Character:
         else:
             print("Invalid choice! You missed your turn!")
             return 'miss'
-            
+
+    def heal(self, healing_amount):
+        self.health += healing_amount
+        if self.health > self.max_health:
+            self.health = self.max_health    
     def choose_heal(self):
         print(f"\n{self.name}'s turn:")
-        print("5. heal")
-        choice = input("Enter 5:")
+        print("5. Heal")
+        choice = input("Enter 5: ")
+
         if choice == '5':
-            return 'health'
+            healing_amount = 20
+            self.heal(healing_amount)
+        else:
+            print("Invalid choice! You missed your turn!")
 
 # player chooses character
 def choose_character():
@@ -121,3 +129,12 @@ if hero.is_alive():
     print(f"{hero.name} won the fight!")
 else:
     print(f"{villain.name} won the fight!")
+
+# """ def heal(self, healing_amount, healing_type="basic"):
+#     if healing_type == "potion":
+#         healing_amount = 50  # Example for potion healing
+#     elif healing_type == "magic":
+#         healing_amount = 100  # Example for magic healing
+    
+#     # Heal logic as before...
+#  """
