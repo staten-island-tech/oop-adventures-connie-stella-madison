@@ -16,18 +16,22 @@ class Character:
     def attack(self, opponent, attack_type):
         if attack_type == 'punch':
             damage = self.punch_damage
-            print(f"{self.name} punches {opponent.name} and deals {damage} damage!")
+            print("{} punches {} and deals {} damage!".format(self.name, opponent.name, damage))
         elif attack_type == 'kick':
             damage = self.kick_damage
-            print(f"{self.name} kicks {opponent.name} and deals {damage} damage!")
+            print("{} kicks {} and deals {} damage!".format(self.name, opponent.name, damage))
         elif attack_type == 'ultimate':
             damage = self.ultimate_attack
-            print(f"{self.name} uses {self.ultimate_attack_2_0} and deals {damage} damage!")
+            print("{} uses Ultimate Attack 1.0 and deals {} damage!".format(self.name, damage))
+        elif attack_type == 'ultimate_2_0':  # Handle Ultimate Attack 2.0 separately
+            damage = self.ultimate_attack_2_0
+            print("{} uses Ultimate Attack 2.0 and deals {} damage!".format(self.name, damage))
         else:
             damage = 0
-            print(f"{self.name} misses the attack!")
+            print("{} misses the attack!".format(self.name))
 
-        opponent.health -= damage  # bye bye oppnonent health
+        opponent.health -= damage  # Decrease opponent health by damage
+
     # to be dead or not to be dead
     def is_alive(self):
         return self.health > 0
@@ -43,19 +47,32 @@ class Character:
     
             print(f"Player chose: {choice}")
 
-            if choice == '1':
-                return 'punch'
-            elif choice == '2':
-                return 'kick'
-            elif choice == '3':
-                return 'ultimate'
-            elif choice == '4':
-                return 'ultimate_2_0'
-            else:
-                print("Invalid choice! You missed your turn!")
+        if choice == '1':
+            return 'punch'
+        elif choice == '2':
+            return 'kick'
+        elif choice == '3':
+            return 'ultimate'
+        elif choice == '4':
+            return 'ultimate_2_0'
+        else:
+            print("Invalid choice! You missed your turn!")
+            return 'miss'
 
+    def heal(self, healing_amount):
+        self.health += healing_amount
+        if self.health > self.max_health:
+            self.health = self.max_health    
+    def choose_heal(self):
+        print(f"\n{self.name}'s turn:")
+        print("5. Heal")
+        choice = input("Enter 5: ")
 
-        
+        if choice == '5':
+            healing_amount = 20
+            self.heal(healing_amount)
+        else:
+            print("Invalid choice! You missed your turn!")
 
 # player chooses character
 def choose_character():
@@ -117,3 +134,12 @@ if hero.is_alive():
     print(f"{hero.name} won the fight!")
 else:
     print(f"{villain.name} won the fight!")
+
+# """ def heal(self, healing_amount, healing_type="basic"):
+#     if healing_type == "potion":
+#         healing_amount = 50  # Example for potion healing
+#     elif healing_type == "magic":
+#         healing_amount = 100  # Example for magic healing
+    
+#     # Heal logic as before...
+#  """
