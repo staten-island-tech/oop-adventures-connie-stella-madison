@@ -47,19 +47,24 @@ class Character:
     
             print(f"Player chose: {choice}")
 
-            if choice == '1':
-                return 'punch'
-            elif choice == '2':
-                return 'kick'
-            elif choice == '3':
-                return 'ultimate'
-            elif choice == '4':
-                return 'ultimate_2_0'
-            else:
-                print("Invalid choice! You missed your turn!")
-
-
-        
+        if choice == '1':
+            return 'punch'
+        elif choice == '2':
+            return 'kick'
+        elif choice == '3':
+            return 'ultimate'
+        elif choice == '4':
+            return 'ultimate_2_0'
+        else:
+            print("Invalid choice! You missed your turn!")
+            return 'miss'
+            
+    def choose_heal(self):
+        print(f"\n{self.name}'s turn:")
+        print("5. heal")
+        choice = input("Enter 5:")
+        if choice == '5':
+            return 'health'
 
 # player chooses character
 def choose_character():

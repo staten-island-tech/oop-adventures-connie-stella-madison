@@ -9,7 +9,8 @@
             "speed": "10 m/h",
             "basic_attack_damage_kick": 25,
             "ultimate_attack_super_duper_stella": 100,
-            "ultimate_attack_super_duper_stella_2_0": 100
+            "ultimate_attack_super_duper_stella_2_0": 100,
+            "heal": 10
         },
         {
             "name": "Connie",
@@ -20,7 +21,8 @@
             "basic_attack_damage_punch": 15,
             "basic_attack_damage_kick": 30,
             "ultimate_attack_super_duper_connie": 90,
-            "ultimate_attack_super_duper_connie_2_0": 95
+            "ultimate_attack_super_duper_connie_2_0": 95,
+            "heal": 10
         },
         {
             "name": "Madison",
@@ -31,7 +33,9 @@
             "speed": "10 m/h",
             "basic_attack_damage_kick": 15,
             "ultimate_attack_super_duper_madison": 100,
-            "ultimate_attack_super_duper_madison_2_0": 100
+            "ultimate_attack_super_duper_madison_2_0": 100,
+            "heal": 10
+            
         },
         {
             "name": "OG",
