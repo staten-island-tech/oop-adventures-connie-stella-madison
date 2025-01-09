@@ -11,18 +11,28 @@ class Character:
         self.kick_damage = kick_damage
         self.ultimate_attack = ultimate_attack
         self.ultimate_attack_2_0 = ultimate_attack_2_0
-
+    PUNCH = 'punch'
+    KICK = 'kick'
+    ULTIMATE = 'ultimate'
+    ULTIMATE_2_0 = 'ultimate_2_0'
+    HEAL = 'heal'
     # how to cause damage towards the villains
     def attack(self, opponent, attack_type):
-        if attack_type == 'punch':
+        if attack_type == PUNCH:
             damage = self.punch_damage
             print(f"{self.name} punches {opponent.name} and deals {damage} damage!")
-        elif attack_type == 'kick':
+        elif attack_type == KICK:
             damage = self.kick_damage
             print(f"{self.name} kicks {opponent.name} and deals {damage} damage!")
-        elif attack_type == 'ultimate':
+        elif attack_type == ULTIMATE:
             damage = self.ultimate_attack
+            print(f"{self.name} uses {self.ultimate_attack} and deals {damage} damage!")
+        elif attack_type == ULTIMATE_2_0:
+            damage = self.ultimate_attack_2_0
             print(f"{self.name} uses {self.ultimate_attack_2_0} and deals {damage} damage!")
+        elif attack_type == HEAL: #no damage,just heal, ur immortal :)
+            damage = 0
+            
         else:
             damage = 0
             print(f"{self.name} misses the attack!")
@@ -104,7 +114,7 @@ def choose_villain():
 
 print("CHOOSE YOUR HERO")
 hero = choose_character()
-print("CHOOSE YOUR OPPONENT")
+
 villain = choose_villain()
 
 
@@ -130,11 +140,3 @@ if hero.is_alive():
 else:
     print(f"{villain.name} won the fight!")
 
-# """ def heal(self, healing_amount, healing_type="basic"):
-#     if healing_type == "potion":
-#         healing_amount = 50  # Example for potion healing
-#     elif healing_type == "magic":
-#         healing_amount = 100  # Example for magic healing
-    
-#     # Heal logic as before...
-#  """
