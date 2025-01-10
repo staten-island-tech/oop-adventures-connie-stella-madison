@@ -18,21 +18,20 @@ class Character:
     HEAL = 'heal'
     # how to cause damage towards the villains
     def attack(self, opponent, attack_type):
-        if attack_type == PUNCH:
+        if attack_type == self.PUNCH:
             damage = self.punch_damage
             print(f"{self.name} punches {opponent.name} and deals {damage} damage!")
-        elif attack_type == KICK:
+        elif attack_type == self.KICK:
             damage = self.kick_damage
             print(f"{self.name} kicks {opponent.name} and deals {damage} damage!")
-        elif attack_type == ULTIMATE:
+        elif attack_type == self.ULTIMATE:
             damage = self.ultimate_attack
             print(f"{self.name} uses {self.ultimate_attack} and deals {damage} damage!")
-        elif attack_type == ULTIMATE_2_0:
+        elif attack_type == self.ULTIMATE_2_0:
             damage = self.ultimate_attack_2_0
             print(f"{self.name} uses {self.ultimate_attack_2_0} and deals {damage} damage!")
-        elif attack_type == HEAL: #no damage,just heal, ur immortal :)
-            damage = 0
-            
+        elif attack_type == self.HEAL: #no damage,just heal, ur immortal :)
+            damage = 0   
         else:
             damage = 0
             print(f"{self.name} misses the attack!")
@@ -49,8 +48,9 @@ class Character:
         print("1. Punch")
         print("2. Kick")
         print("3. Ultimate Attack (Super Duper!)")
-        print("4. Ultimate Attack 2.0")
-        choice = input("Enter 1, 2, 3, or 4: ")
+        print("4. Ultimate Attack (Super Super!)")
+        print("5. Heal")
+        choice = input("Enter 1, 2, 3, 4, or 5: ")
 
         if choice == '1':
             return 'punch'
@@ -60,6 +60,8 @@ class Character:
             return 'ultimate'
         elif choice == '4':
             return 'ultimate_2_0'
+        elif choice == '5'
+            return 'heal'
         else:
             print("Invalid choice! You missed your turn!")
             return 'miss'
