@@ -32,26 +32,25 @@ class Character:
             print(f"{self.name} uses {self.ultimate_attack_2_0} and deals {damage} damage!")
         elif attack_type == HEAL: #no damage,just heal, ur immortal :)
             damage = 0
+            
         else:
             damage = 0
-            print("{} misses the attack!".format(self.name))
+            print(f"{self.name} misses the attack!")
 
-        opponent.health -= damage  # Decrease opponent health by damage
-
+        opponent.health -= damage  # bye bye oppnonent health
     # to be dead or not to be dead
     def is_alive(self):
         return self.health > 0
+
     def choose_attack(self):
+        # player chooses the attack
         print(f"\n{self.name}'s turn:")
         print("Choose your attack:")
         print("1. Punch")
         print("2. Kick")
-        print("3. Ultimate Attack 1.0")
+        print("3. Ultimate Attack (Super Duper!)")
         print("4. Ultimate Attack 2.0")
-        while True:
-            choice = input("Enter 1, 2, 3, or 4: ")
-    
-            print(f"Player chose: {choice}")
+        choice = input("Enter 1, 2, 3, or 4: ")
 
         if choice == '1':
             return 'punch'
@@ -64,13 +63,21 @@ class Character:
         else:
             print("Invalid choice! You missed your turn!")
             return 'miss'
-            
+
+    def heal(self, healing_amount):
+        self.health += healing_amount
+        if self.health > self.max_health:
+            self.health = self.max_health    
     def choose_heal(self):
         print(f"\n{self.name}'s turn:")
-        print("5. heal")
-        choice = input("Enter 5:")
+        print("5. Heal")
+        choice = input("Enter 5: ")
+
         if choice == '5':
-            return 'health'
+            healing_amount = 20
+            self.heal(healing_amount)
+        else:
+            print("Invalid choice! You missed your turn!")
 
 # player chooses character
 def choose_character():
@@ -132,3 +139,4 @@ if hero.is_alive():
     print(f"{hero.name} won the fight!")
 else:
     print(f"{villain.name} won the fight!")
+
