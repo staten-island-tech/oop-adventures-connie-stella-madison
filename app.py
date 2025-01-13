@@ -60,7 +60,7 @@ class Character:
             return 'ultimate'
         elif choice == '4':
             return 'ultimate_2_0'
-        elif choice == '5'
+        elif choice == '5':
             return 'heal'
         else:
             print("Invalid choice! You missed your turn!")
