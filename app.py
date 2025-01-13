@@ -11,41 +11,46 @@ class Character:
         self.kick_damage = kick_damage
         self.ultimate_attack = ultimate_attack
         self.ultimate_attack_2_0 = ultimate_attack_2_0
-
+    PUNCH = 'punch'
+    KICK = 'kick'
+    ULTIMATE = 'ultimate'
+    ULTIMATE_2_0 = 'ultimate_2_0'
+    HEAL = 'heal'
     # how to cause damage towards the villains
     def attack(self, opponent, attack_type):
-        if attack_type == 'punch':
+        if attack_type == self.PUNCH:
             damage = self.punch_damage
-            print("{} punches {} and deals {} damage!".format(self.name, opponent.name, damage))
-        elif attack_type == 'kick':
+            print(f"{self.name} punches {opponent.name} and deals {damage} damage!")
+        elif attack_type == self.KICK:
             damage = self.kick_damage
-            print("{} kicks {} and deals {} damage!".format(self.name, opponent.name, damage))
-        elif attack_type == 'ultimate':
+            print(f"{self.name} kicks {opponent.name} and deals {damage} damage!")
+        elif attack_type == self.ULTIMATE:
             damage = self.ultimate_attack
-            print("{} uses Ultimate Attack 1.0 and deals {} damage!".format(self.name, damage))
-        elif attack_type == 'ultimate_2_0':  # Handle Ultimate Attack 2.0 separately
+            print(f"{self.name} uses {self.ultimate_attack} and deals {damage} damage!")
+        elif attack_type == self.ULTIMATE_2_0:
             damage = self.ultimate_attack_2_0
-            print("{} uses Ultimate Attack 2.0 and deals {} damage!".format(self.name, damage))
+            print(f"{self.name} uses {self.ultimate_attack_2_0} and deals {damage} damage!")
+        elif attack_type == self.HEAL: #no damage,just heal, ur immortal :)
+            damage = 0   
         else:
             damage = 0
-            print("{} misses the attack!".format(self.name))
+            print(f"{self.name} misses the attack!")
 
-        opponent.health -= damage  # Decrease opponent health by damage
-
+        opponent.health -= damage  # bye bye oppnonent health
     # to be dead or not to be dead
     def is_alive(self):
         return self.health > 0
+
     def choose_attack(self):
+        # player chooses the attack
         print(f"\n{self.name}'s turn:")
         print("Choose your attack:")
         print("1. Punch")
         print("2. Kick")
-        print("3. Ultimate Attack 1.0")
-        print("4. Ultimate Attack 2.0")
-        while True:
-            choice = input("Enter 1, 2, 3, or 4: ")
-    
-            print(f"Player chose: {choice}")
+        print("3. Ultimate Attack (Super Duper!)")
+        print("4. Ultimate Attack (Super Super!)")
+        print("5. Heal")
+        choice = input("Enter 1, 2, 3, 4, or 5: ")
 
         if choice == '1':
             return 'punch'
@@ -55,16 +60,26 @@ class Character:
             return 'ultimate'
         elif choice == '4':
             return 'ultimate_2_0'
+        elif choice == '5':
+            return 'heal'
         else:
             print("Invalid choice! You missed your turn!")
             return 'miss'
-            
+
+    def heal(self, healing_amount):
+        self.health += healing_amount
+        if self.health > self.max_health:
+            self.health = self.max_health    
     def choose_heal(self):
         print(f"\n{self.name}'s turn:")
-        print("5. heal")
-        choice = input("Enter 5:")
+        print("5. Heal")
+        choice = input("Enter 5: ")
+
         if choice == '5':
-            return 'health'
+            healing_amount = 20
+            self.heal(healing_amount)
+        else:
+            print("Invalid choice! You missed your turn!")
 
 # player chooses character
 def choose_character():
@@ -126,3 +141,4 @@ if hero.is_alive():
     print(f"{hero.name} won the fight!")
 else:
     print(f"{villain.name} won the fight!")
+
