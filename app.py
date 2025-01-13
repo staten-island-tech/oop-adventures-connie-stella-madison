@@ -60,7 +60,7 @@ class Character:
             return 'ultimate'
         elif choice == '4':
             return 'ultimate_2_0'
-        elif choice == '5'
+        elif choice == '5':
             return 'heal'
         else:
             print("Invalid choice! You missed your turn!")
@@ -91,15 +91,27 @@ def choose_character():
     
     choice = int(input("Pick a number (1, 2, 3...): "))  # Player picks a number
     selected_hero = heroes[choice - 1] 
-    
+
+    # Print the selected hero data 
+    print(f"Selected Hero: {selected_hero}")
+
+    # Ensure the correct names for ultimate attacks
+    ultimate_attack = selected_hero.get('ultimate_attack_super_duper_connie', 0)  # Correct field name
+    ultimate_attack_2_0 = selected_hero.get('ultimate_attack_super_duper_connie_2_0', 0)  # Correct field name
+
+    # Debug print the ultimate attack values
+    print(f"Ultimate Attack (Super Duper!): {ultimate_attack}")
+    print(f"Ultimate Attack (Super Super!): {ultimate_attack_2_0}")
+
+    # completes the character
     return Character(
         selected_hero['name'], 
         selected_hero['hp'], 
         selected_hero['basic_attack_damage_punch'], 
         selected_hero['basic_attack_damage_kick'],
-        selected_hero['ultimate_attack_super_duper_stella'] if 'ultimate_attack_super_duper_stella' in selected_hero else 0, 
-        selected_hero['ultimate_attack_super_duper_stella_2_0'] if 'ultimate_attack_super_duper_stella_2_0' in selected_hero else 0  
-     )
+        ultimate_attack, 
+        ultimate_attack_2_0
+    )
 
 # honestly i dont know if i want this part or just make it randomized 
 def choose_villain():
