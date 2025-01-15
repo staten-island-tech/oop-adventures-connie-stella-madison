@@ -1,3 +1,4 @@
+print("You're the 'Hero'! Fight the Villain!")
 import json
 import random
 with open("Characters.json", encoding="utf8") as test:
@@ -141,4 +142,6 @@ if hero.is_alive():
     print(f"{hero.name} won the fight!")
 else:
     print(f"{villain.name} won the fight!")
+    print("you were never the hero! It's just a dream so WAKE UPPPP!!!!!")
+
 
